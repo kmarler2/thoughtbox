@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import CreateThought from './createThought/createThought';
 import { ThoughtList } from './thoughtList/thoughtList';
+import ThoughtCard from './thoughtCard/thoughtCard.js';
 
 class App extends Component {
   constructor() {
@@ -11,10 +12,20 @@ class App extends Component {
     };
   }
 
-  createThought(thought) {
-    Object.assign(thought, { id: this.state.thoughts.length });
-    this.state.thoughts.push(thought);
-    this.setState({ thoughts: this.state.thoughts });
+  createThought = (thought) => {
+    const newThought = {...thought, id: Date.now()}
+    const thoughts = [...this.state.thoughts, newThought]
+    this.setState({
+      thoughts
+    });
+  }
+
+  removeCard = (id) => {
+    console.log(id)
+    const thoughts = this.state.thoughts.filter(thought => thought.id !== id);
+    this.setState({
+      thoughts
+    })
   }
 
   render() {
@@ -23,9 +34,12 @@ class App extends Component {
         <div className="header">
           <h2>ThoughtBox</h2>
         </div>
-        <CreateThought createThought={this.createThought.bind(this)} />
+        <CreateThought createThought={this.createThought} />
         <div>
-          <ThoughtList thoughtList={this.state.thoughts} />
+          <ThoughtList 
+          thoughts={this.state.thoughts}
+          remove={this.removeCard}
+           />
         </div>
       </div>
     );

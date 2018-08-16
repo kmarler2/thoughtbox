@@ -1,14 +1,16 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import ThoughtList from './thoughtList.js';
 
-import { ThoughtList } from './thoughtList.js';
+// describe('ThoughtList', () => {
 
-describe('ThoughtList', () => {
+//   it('should match the snapshot with no thoughts', () => {
+//     const wrapper = shallow(<ThoughtList />);
+//     expect(wrapper).toMatchSnapshot()
+//   });
 
-  it('should match the snapshot with no thoughts', () => {
-  });
-
-  it('should match the snapshot with thoughts', () => {
-  });
-
-});
+//   it('should match the snapshot with thoughts', () => {
+//     const wrapper = shallow(<ThoughtList />);
+//     expect(wrapper).toMatchSnapshot()
+//   });
+// });

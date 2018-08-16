@@ -3,7 +3,9 @@ import { shallow, mount } from 'enzyme';
 import App from './App';
 
 it('matches the snapshot', () => {
-});
+    const wrapper = shallow(<App />);
+    expect(wrapper).toMatchSnapshot()
+  });
 
 it('renders a thoughtList with the correct props', () => {
 });

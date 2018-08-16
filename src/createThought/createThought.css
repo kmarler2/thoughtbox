@@ -1,0 +1,25 @@
+form {
+  width: 50%;
+  margin-left: 25%;
+}
+.inputs {
+  width: 100%;
+  height: 30px;
+  padding-top: 10px;
+  font-size: 30px;
+}
+
+.inputs::placeholder {
+  font-size: 30px;
+}
+
+.inputs:focus {
+  outline: none;
+}
+
+button {
+  width: 25%;
+  height: 30px;
+  padding: 10px;
+  margin-left: 37.5%;
+}
